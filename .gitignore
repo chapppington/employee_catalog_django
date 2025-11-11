@@ -1,0 +1,15 @@
+.vscode/
+*.pyc
+.env 
+core/project/settings/local.py
+.cursorignore
+static/*
+!static/.gitkeep
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+.coverage.*.*
+.coverage.*.*.*
+.coverage.*.*.*.*
