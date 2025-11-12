@@ -4,7 +4,9 @@ from core.apps.common.models import TimedBaseModel
 
 
 class Employee(TimedBaseModel):
-    full_name = models.CharField(verbose_name="ФИО", max_length=255)
+    first_name = models.CharField(verbose_name="Имя", max_length=255)
+    last_name = models.CharField(verbose_name="Фамилия", max_length=255)
+    middle_name = models.CharField(verbose_name="Отчество", max_length=255)
     position = models.CharField(verbose_name="Должность", max_length=128)
     date_hired = models.DateField(verbose_name="Дата приёма на работу")
     salary = models.DecimalField(
