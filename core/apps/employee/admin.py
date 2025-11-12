@@ -1,10 +1,10 @@
 # Register your models here.
 from django.contrib import admin
 
-from core.apps.employee.models import Employee
+from core.apps.employee.models import EmployeeModel
 
 
-@admin.register(Employee)
+@admin.register(EmployeeModel)
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = (
         "first_name",

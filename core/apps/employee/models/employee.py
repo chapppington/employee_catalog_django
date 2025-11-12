@@ -1,9 +1,13 @@
+from datetime import datetime
+
 from django.db import models
 
 from core.apps.common.models import TimedBaseModel
+from core.apps.employee.entities.employee import EmployeeEntity
 
 
-class Employee(TimedBaseModel):
+class EmployeeModel(TimedBaseModel):
+    id = models.BigAutoField(primary_key=True)
     first_name = models.CharField(verbose_name="Имя", max_length=255)
     last_name = models.CharField(verbose_name="Фамилия", max_length=255)
     middle_name = models.CharField(verbose_name="Отчество", max_length=255)
@@ -24,8 +28,23 @@ class Employee(TimedBaseModel):
     )
 
     def __str__(self):
-        return self.full_name
+        return f"{self.first_name} {self.last_name} {self.middle_name}".strip()
 
     class Meta:
+        db_table = "employee"
         verbose_name = "Сотрудник"
         verbose_name_plural = "Сотрудники"
+
+    def to_entity(self) -> EmployeeEntity:
+        return EmployeeEntity(
+            id=self.id,
+            first_name=self.first_name,
+            last_name=self.last_name,
+            middle_name=self.middle_name,
+            position=self.position,
+            date_hired=datetime.combine(self.date_hired, datetime.min.time()),
+            salary=float(self.salary),
+            manager=self.manager.to_entity() if self.manager else None,
+            created_at=self.created_at,
+            updated_at=self.updated_at,
+        )

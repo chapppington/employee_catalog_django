@@ -5,15 +5,16 @@ from dataclasses import (
 from datetime import datetime
 from typing import Optional
 
-from core.apps.common.entitites import BaseEntity
-
 
 @dataclass
-class Employee(BaseEntity):
+class EmployeeEntity:
+    id: int
     first_name: str
     last_name: str
     middle_name: str
     position: str
     date_hired: datetime
     salary: float
-    manager: Optional["Employee"] = field(default=None, kw_only=True)
+    manager: Optional["EmployeeEntity"] = field(default=None, kw_only=True)
+    created_at: datetime
+    updated_at: datetime
