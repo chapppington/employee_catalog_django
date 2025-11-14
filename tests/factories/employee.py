@@ -1,7 +1,7 @@
 from factory import Faker
 from factory.django import DjangoModelFactory
 
-from core.apps.employee.models.employee import EmployeeModel
+from core.apps.employee.models import EmployeeModel
 
 
 class EmployeeModelFactory(DjangoModelFactory):

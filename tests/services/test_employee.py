@@ -16,9 +16,9 @@ import pytest
 from tests.factories.employee import EmployeeModelFactory
 
 from core.api.filters import PaginationIn
-from core.apps.employee.filters.employee import EmployeeFilters
-from core.apps.employee.models.employee import EmployeeModel
-from core.apps.employee.services.employee import BaseEmployeeService
+from core.apps.employee.filters import EmployeeFilters
+from core.apps.employee.models import EmployeeModel
+from core.apps.employee.services import BaseEmployeeService
 
 
 @pytest.mark.django_db

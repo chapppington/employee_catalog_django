@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # First party
     "core.apps.employee.apps.EmployeeConfig",
+    "core.apps.customers.apps.CustomersConfig",
 ]
 
 MIDDLEWARE = [

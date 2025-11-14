@@ -2,7 +2,7 @@ from datetime import datetime
 
 from ninja import Schema
 
-from core.apps.employee.entities.employee import EmployeeEntity
+from core.apps.employee.entities import EmployeeEntity
 
 
 class EmployeeSchema(Schema):

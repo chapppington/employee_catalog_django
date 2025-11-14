@@ -1,6 +1,6 @@
 import pytest
 
-from core.apps.employee.services.employee import (
+from core.apps.employee.services import (
     BaseEmployeeService,
     ORMEmployeeService,
 )

@@ -3,7 +3,7 @@ from datetime import datetime
 from django.db import models
 
 from core.apps.common.models import TimedBaseModel
-from core.apps.employee.entities.employee import EmployeeEntity
+from core.apps.employee.entities import EmployeeEntity
 
 
 class EmployeeModel(TimedBaseModel):

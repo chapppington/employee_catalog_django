@@ -13,8 +13,8 @@ from core.api.schemas import (
     ListPaginatedResponse,
 )
 from core.api.v1.employees.schemas import EmployeeSchema
-from core.apps.employee.filters.employee import EmployeeFilters
-from core.apps.employee.services.employee import (
+from core.apps.employee.filters import EmployeeFilters
+from core.apps.employee.services import (
     BaseEmployeeService,
     ORMEmployeeService,
 )
